@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: whitesmoke;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header {
+  background: darkblue;
+  height: 80px;
+  width: 100dvw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  color: white;
+  padding: 0 1rem
+}
+
+.header .header-right-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  gap: 1rem;
+}
+
+.header .header-right-container .header-logo {
+  border: 1px solid gray;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.header .header-right-container .header-title {
+  font-weight: 800;
+}
+
+.header .header-text {
+  font-style: italic;
+  font-size: .9rem;
+}
+
+.nav-container {
+  height: 65px;
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 2px white;
+}
+
+.nav-container .nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  list-style-type: none;
+}
+
+.nav-container .nav-items li {
+  background: white;
+  font-size: 1.2rem;
+  padding: .3rem 2rem;
+  border: 1px solid gray;
+  border-radius: 25px;
+  text-align: center;
+  vertical-align: center;
+  position: relative;
+}
+
+.nav-container .nav-items li:hover {
+  background: rgb(233, 228, 228)
+}
+
+.nav-container .nav-items li:hover > .nav-inner-nav-items{
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+
+.nav-container .nav-items .nav-inner-nav-items {
+  display: none;
+}
