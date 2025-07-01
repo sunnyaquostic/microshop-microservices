@@ -19,7 +19,7 @@ process.on('uncaughtException', (err) => {
 
 
 app.listen(PORT, () => {
-    connectKafkaProducer()
+    // connectKafkaProducer()
     console.log(`Payment service is listen on PORT ${PORT}`)
 })
 

@@ -3,6 +3,7 @@ import { configDotenv } from 'dotenv';
 import cors from 'cors';
 import register from './routes/userRoute.js'
 import errorHandleMiddleware from './middleware/error.js'
+import cookieParser from "cookie-parser";
 
 const app  = express()
 
@@ -11,6 +12,7 @@ app.use(cors ({
 }))
 
 app.use(express.json())
+app.use(cookieParser())
 
 app.use('/api/v1', register);
 app.use(errorHandleMiddleware)

@@ -1,14 +1,14 @@
 import jwt from "jsonwebtoken";
 
-const getJWTToken = (sentEmail) => {
+const getJWTToken = (sentEmail) => {  
     return jwt.sign({email: sentEmail}, process.env.JWT_SECRET_KEY, {
-        expiresIn:process.env.JWT_EXPIRES
+        expiresIn:process.env.JWT_EXPIRES || '3d',        
     })
 }
 
 export const sendToken= (user, statusCode, res) => {
-    const token = getJWTToken();
-    const cookieExp = parseInt(process.env.EXPIRE_COOKIE)
+    const token = getJWTToken(user.email);
+    const cookieExp = parseInt(process.env.EXPIRE_COOKIE) || 3
     // options for cookies
     const options = {
         expires: new Date(Date.now() + cookieExp * 24 * 60 * 60 * 1000),
