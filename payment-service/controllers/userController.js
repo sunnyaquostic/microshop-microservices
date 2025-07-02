@@ -259,6 +259,7 @@ export const resetPassword = handleAsyncError( async (req, res, next) => {
         return next(new HandleError("Password doesn't match", 404))
 
     const hashedPassword = await bcrypt.hash(password, 16)
+    
     data = {
         password: hashedPassword
     }

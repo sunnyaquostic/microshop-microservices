@@ -2,7 +2,7 @@ import { Kafka } from 'kafkajs';
 
 const kafka = new Kafka({
     clientId: "order-service",
-    brokers: ['host.docker.internal:9094', 'host.docker.internal:9095', 'host.docker.internal:9096'],
+    brokers: ['localhost:9094', 'localhost:9095', 'localhost:9096'],
 });
 
 const producer = kafka.producer()
